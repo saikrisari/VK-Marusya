@@ -1,0 +1,20 @@
+@use "./global/index" as global;
+
+@use "global/fonts";
+@use "global/normalize";
+@use "global/mixins";
+@use "global/variables";
+@use "global/reboot";
+
+@use "blocks/main";
+@use "blocks/layout";
+@use "blocks/genres";
+@use "blocks/genre";
+@use "blocks/account";
+@use "blocks/hero";
+@use "blocks/search";
+@use "blocks/trailer";
+@use "blocks/auth";
+@use "blocks/input";
+@use "blocks/top";
+@use "blocks/btn";

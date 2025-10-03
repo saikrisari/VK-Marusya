@@ -1,0 +1,117 @@
+@use "../global" as global;
+
+.top {
+  margin-bottom: 120px;
+  overflow: visible;
+
+  @include global.mobile-tablet {
+    margin: 0;
+    padding: 32px 0;
+    max-width: 100%;
+  }
+
+  &__scroll {
+    @include global.mobile-tablet {
+      position: static;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 40px 20px 32px;
+      display: flex;
+      gap: 16px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      max-width: 1180px;
+      width: calc(100vw - 40px);
+      box-sizing: border-box;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    counter-reset: top-movie;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+    @include global.mobile-tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 40px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+    counter-increment: top-movie;
+    min-width: 222px;
+    width: 222px;
+    background-color: global.$color-dark-gray;
+    border-radius: 16px;
+    border: 1px solid global.$border-gray;
+    cursor: pointer;
+    overflow: visible;
+    box-shadow: 0px 0px 80px 0px global.$shadow-white;
+
+    @include global.mobile-tablet {
+      box-shadow: 0px 0px 20px 0px global.$shadow-white;
+      flex: 0 0 auto;
+    }
+
+    &::before {
+      position: absolute;
+      content: counter(top-movie);
+      top: -12px;
+      left: -12px;
+      padding: 8px 24px;
+      background-color: global.$color-white;
+      border-radius: 50px;
+      color: #6a5dc2;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__image {
+    width: 222px;
+    height: 336px;
+    border-radius: 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 64px;
+
+    @include global.mobile-tablet {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__placeholder {
+    height: 336px;
+    min-width: 222px;
+    width: 222px;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+  }
+}

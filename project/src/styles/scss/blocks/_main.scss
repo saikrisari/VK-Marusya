@@ -1,0 +1,118 @@
+@use "../global" as global;
+
+.main {
+  line-height: 24px;
+
+  @include global.mobile-tablet {
+    padding-top: 252px;
+    position: relative;
+  }
+
+  &__random {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include global.mobile-tablet {
+      margin: 0;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__desktop {
+    display: flex;
+    gap: 16px;
+
+    @include global.mobile-tablet {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include global.mobile-tablet {
+      display: block;
+    }
+
+    button {
+      display: inline;
+    }
+  }
+
+  &__wrapper {
+    @include global.mobile-tablet {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0 24px;
+    }
+  }
+
+  &__image {
+    width: 680px;
+    height: 552px;
+    border-radius: 16px;
+
+    @include global.mobile-tablet {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 334px;
+      width: 334px;
+      height: 260px;
+      border-radius: 16px;
+    }
+
+    @include global.desktop {
+      min-width: 500px;
+      min-height: 405px;
+      width: 500px;
+      height: 405px;
+    }
+  }
+
+  &__placeholder {
+    min-width: 680px;
+    width: 680px;
+    height: 552px;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+
+    @include global.mobile-tablet {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 334px;
+      min-width: 334px;
+      height: 260px;
+      min-height: 260px;
+    }
+
+    @include global.desktop {
+      min-width: 500px;
+      min-height: 405px;
+      width: 500px;
+      height: 405px;
+    }
+  }
+
+  &__trailer {
+    display: inline;
+  }
+
+  &__icon {
+    display: flex;
+  }
+}

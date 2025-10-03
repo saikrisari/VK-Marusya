@@ -1,0 +1,39 @@
+// Colors
+$color-white: #ffffff;
+$color-black: #0a0b0b;
+$color-violet: #B4A9FF;
+$color-error: #FF7575;
+$color-pink: #DC5DFC;
+$color-gray: #747474;
+$color-active: #6A5DC2;
+$color-dark-blue: #45526E;
+$color-black-black: #000000;
+$color-green-rating: #308e21;
+$color-gold-rating: #a59400;
+$color-gray-rating: #777777;
+$color-red-rating: #c82020;
+$color-light-blue: #67a5eb;
+$color-dark-gray: #393b3c;
+$gradient-black-70: rgba(0, 0, 0, 0.9), rgba(39, 36, 36, 0.7);
+$gradient-blueviolet-90: rgba(39, 135, 245, 0.9), rgba(163, 147, 245, 0.9);
+$bg-gradient: linear-gradient($gradient-black-70),
+  linear-gradient($gradient-blueviolet-90);
+$shadow-white: rgba(255, 255, 255, 0.33);
+$border-black: rgba(0, 0, 0, 0.4);
+$border-white: rgba(255, 255, 255, 0.8);
+$border-gray: rgba(255, 255, 255, 0.25);
+$border-chopped: rgba(255, 255, 255, 0.5);
+$dark-background: rgba(10, 11, 11, 0.9);
+
+// Typography
+$ff-main: "Play", "Arial", sans-serif;
+
+// Viewport
+$vp-mobile-min: 375px;
+$vp-tablet-max: 1199px;
+$vp-desktop-min: 1200px;
+$vp-desktop-max: 1399px;
+$vp-large-desktop-min: 1400px;
+
+$vp-player-812: 812px;
+$vp-player-375: 375px;

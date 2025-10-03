@@ -1,0 +1,224 @@
+@use "../global" as global;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  @include global.mobile-tablet {
+    padding: 0 20px;
+    max-width: none;
+  }
+
+  @include global.desktop {
+    padding: 0 40px;
+  }
+
+  @include global.large-desktop {
+    min-height: 100vh;
+    padding: 0 80px;
+  }
+
+  .header {
+    width: 100%;
+    padding: 24px 0;
+    font-weight: 40;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+
+    @include global.mobile-tablet {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding: 16px 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    @include global.desktop {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    @include global.large-desktop {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+
+    &__block {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      @include global.mobile-tablet {
+        gap: 20px;
+      }
+
+      @include global.large-desktop {
+        gap: 40px;
+        justify-content: space-between;
+      }
+    }
+
+    &__logo {
+      @include global.mobile-tablet {
+        display: block;
+        width: 126px;
+        height: 28px;
+      }
+
+      @include global.desktop {
+        display: none;
+      }
+
+      @include global.large-desktop {
+        display: block;
+        width: 143px;
+        height: 32px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      @include global.mobile-tablet {
+        gap: 20px;
+      }
+
+      @include global.large-desktop {
+        gap: 40px;
+      }
+    }
+
+    &__button {
+      color: global.$color-white;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:hover {
+        color: global.$color-violet;
+      }
+
+      @include global.mobile-tablet {
+        padding: 8px 0;
+        margin: 0;
+      }
+
+      &--active {
+        border-bottom: 1.5px solid global.$color-pink;
+        margin-bottom: -1.5px;
+
+        @include global.mobile-tablet {
+          border: none;
+        }
+      }
+
+      &--main {
+        @include global.mobile-tablet {
+          display: none;
+        }
+
+        @include global.desktop {
+          display: block;
+        }
+
+        @include global.desktop {
+          display: block;
+        }
+
+        @include global.large-desktop {
+          display: block;
+        }
+      }
+    }
+
+    &__span {
+      @include global.mobile-tablet {
+        display: none;
+      }
+
+      @include global.desktop {
+        display: block;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      @include global.large-desktop {
+        display: block;
+      }
+    }
+
+    &__icon {
+      color: global.$color-white;
+
+      @include global.mobile-tablet {
+        display: block;
+      }
+
+      @include global.desktop {
+        display: none;
+      }
+
+      @include global.large-desktop {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: end;
+
+  @include global.mobile-tablet {
+    padding: 24px 0;
+    justify-content: start;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 24px;
+
+    &-item {
+      padding: 0;
+      display: flex;
+    }
+
+    &-icon {
+      color: global.$color-white;
+      border: 1px solid global.$border-white;
+      border-radius: 8px;
+
+      @include global.mobile-tablet {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

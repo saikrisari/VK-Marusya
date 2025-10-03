@@ -1,0 +1,58 @@
+@use "../global" as global;
+
+.custom__input {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid global.$border-black;
+  border-radius: 8px;
+
+  &:hover {
+    border: 1px solid global.$color-violet;
+    .custom__input-icon {
+      color: global.$color-violet;
+      opacity: 100%;
+    }
+  }
+
+  &-field {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+    color: global.$color-black-black;
+    padding: 0;
+
+    &::placeholder {
+      color: global.$color-black-black;
+      opacity: 40%;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &:focus-within {
+    border: 1px solid global.$color-violet;
+    outline: none;
+
+    .custom__input-icon {
+        color: global.$color-violet;
+        opacity: 100%;
+    }
+  }
+
+  &-icon {
+    color: global.$color-black-black;
+    opacity: 40%;
+  }
+
+  &--error {
+    border: 1px solid global.$color-error;
+
+    .custom__input-icon {
+        color: global.$color-error;
+    }
+  }
+}

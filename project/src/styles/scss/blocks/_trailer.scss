@@ -1,0 +1,67 @@
+@use "../global" as global;
+
+.trailer {
+  position: fixed;
+  inset: 0;
+  background: global.$dark-background;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    position: relative;
+  }
+
+  &__window {
+    border: 1px solid global.$border-chopped;
+    position: relative;
+
+    @include global.player-375 {
+      width: 375px;
+      height: 212px;
+    }
+
+    @include global.player-812 {
+      width: 663px;
+      height: 375px;
+    }
+
+    @include global.desktop {
+      width: 940px;
+      height: 540px;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: global.$color-white;
+    border-radius: 24px;
+    display: flex;
+    position: absolute;
+
+    @include global.mobile-tablet {
+      top: 8px;
+      right: 8px;
+      padding: 4px;
+    }
+
+    @include global.desktop {
+      padding: 12px;
+      top: 0;
+      right: -72px;
+      cursor: pointer;
+    }
+
+    @include global.large-desktop {
+      padding: 12px;
+      top: 0;
+      right: -72px;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    color: global.$color-black-black;
+  }
+}

@@ -1,0 +1,241 @@
+@use "../global" as global;
+
+.header__button--mobile-search {
+  display: none;
+
+  @include global.mobile-tablet {
+    display: block;
+  }
+}
+
+.search {
+  position: relative;
+
+  @include global.mobile-tablet {
+    display: none;
+  }
+
+  &--active {
+    @include global.mobile-tablet {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      padding: 16px 18.5px;
+      background-color: global.$dark-background;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 335px;
+      max-width: 100%;
+    }
+  }
+
+  &__overlay {
+    display: none;
+
+    @include global.mobile-tablet {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background-color: global.$color-black-black;
+      opacity: 50%;
+      z-index: 1;
+    }
+  }
+
+  &__wrapper {
+    background-color: global.$color-dark-gray;
+    padding: 12px 16px;
+    display: flex;
+    border-radius: 8px;
+    max-width: 655px;
+    width: 655px;
+    margin: 0 auto;
+    position: relative;
+
+    @include global.mobile-tablet {
+      max-width: none;
+      width: 100%;
+      padding: 16px;
+    }
+
+    &:focus-within .search__close {
+      opacity: 100%;
+    }
+  }
+
+  &__input {
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 0;
+    line-height: 24px;
+    font-size: 18px;
+    color: global.$color-white;
+    font-weight: 400;
+
+    &::placeholder {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      color: global.$color-white;
+      opacity: 50%;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    color: global.$color-white;
+    opacity: 50%;
+    margin-right: 12px;
+  }
+
+  &__button {
+    margin-left: 12px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+  }
+
+  &__close {
+    color: global.$color-white;
+    opacity: 50%;
+    cursor: pointer;
+  }
+
+  &__results {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    max-width: 560px;
+    width: 100%;
+    background-color: global.$color-dark-gray;
+    margin: 0;
+    align-self: flex-end;
+    border-radius: 8px;
+
+    @include global.mobile-tablet {
+      align-self: flex-start;
+      padding: 24px 20px;
+      flex: 0 0 auto;
+      flex-wrap: nowrap;
+      left: 50%;
+      top: 80px;
+      max-width: 1180px;
+      flex-direction: row;
+      position: static;
+      overflow-y: hidden;
+      overflow-x: auto;
+      gap: 16px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    height: 92px;
+    display: flex;
+    gap: 16px;
+    padding: 20px 8px;
+    cursor: pointer;
+
+    @include global.mobile-tablet {
+      width: 220px;
+      min-width: 220px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 12px;
+
+    @include global.mobile-tablet {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__poster {
+    @include global.mobile-tablet {
+      width: 158px;
+      height: 206px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__placeholder {
+    width: 40px;
+    height: 52px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include global.mobile-tablet {
+      width: 158px;
+      height: 206px;
+    }
+  }
+
+  &__indicator {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 70%;
+  }
+
+  &__rating {
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 16px;
+    font-weight: 700;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    &.green {
+      background-color: global.$color-green-rating;
+    }
+
+    &.gold {
+      background-color: global.$color-gold-rating;
+    }
+
+    &.gray {
+      background-color: global.$color-gray-rating;
+    }
+
+    &.red {
+      background-color: global.$color-red-rating;
+    }
+  }
+}

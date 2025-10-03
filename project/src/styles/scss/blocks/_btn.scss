@@ -1,0 +1,102 @@
+@use "../global" as global;
+
+.btn {
+  background-color: global.$color-light-blue;
+  padding: 16px 48px;
+  border: none;
+  display: flex;
+  border-radius: 28px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: global.$color-white;
+  cursor: pointer;
+
+  @include global.mobile-tablet {
+    width: 100%;
+    max-width: 335px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--auth {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--no-margin {
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--movie {
+    padding: 16px 87px;
+    max-width: fit-content;
+  }
+
+  &:disabled {
+    background-color: global.$color-dark-blue;
+    color: global.$border-chopped;
+    pointer-events: none;
+  }
+
+  &:active {
+    background-color: global.$color-active;
+  }
+
+  &__secondary {
+    display: flex;
+    padding: 16px 48px;
+    background-color: global.$color-dark-gray;
+    border: 1px solid global.$border-black;
+    border-radius: 28px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: global.$color-white;
+    cursor: pointer;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+
+    @include global.mobile-tablet {
+      padding: 16px 40px;
+    }
+
+    &--round {
+      padding: 16px 22px;
+      width: fit-content;
+    }
+
+    &:hover {
+      background-color: global.$color-white;
+      color: global.$color-black-black;
+      border: 1px solid global.$color-black-black;
+
+      svg {
+        color: global.$color-black-black;
+      }
+    }
+
+    &:disabled {
+      background-color: global.$color-gray;
+      color: global.$border-chopped;
+      pointer-events: none;
+    }
+  }
+
+  &__white {
+    border: none;
+    background-color: transparent;
+    color: global.$color-black-black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    padding: 0;
+  }
+}

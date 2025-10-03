@@ -1,0 +1,81 @@
+@use "../global" as global;
+
+.genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include global.mobile-tablet {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 32px 0 0;
+    margin: 0 0 64px;
+    align-self: start;
+
+    @include global.mobile-tablet {
+      gap: 8px;
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__icon {
+    color: global.$color-white;
+
+    @include global.mobile-tablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px 40px;
+    padding: 0;
+    margin: 0 0 64px;
+    justify-content: center;
+
+    @include global.mobile-tablet {
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__item {
+    min-width: 222px;
+    width: 222px;
+    border: 1px solid global.$border-gray;
+    border-radius: 16px;
+    height: 334px;
+    cursor: pointer;
+    box-shadow: 0px 0px 80px 0px global.$shadow-white;
+
+    @include global.mobile-tablet {
+      height: 502px;
+      width: 335px;
+      min-width: 335px;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+    height: 334px;
+    border-radius: 16px;
+
+    @include global.mobile-tablet {
+      height: 502px;
+    }
+  }
+}

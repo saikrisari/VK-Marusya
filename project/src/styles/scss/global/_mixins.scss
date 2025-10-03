@@ -1,0 +1,31 @@
+@use "./variables";
+
+@mixin mobile-tablet {
+  @media (max-width: variables.$vp-tablet-max) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: variables.$vp-desktop-min) and (max-width: variables.$vp-desktop-max) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: variables.$vp-large-desktop-min) {
+    @content;
+  }
+}
+
+@mixin player-812 {
+  @media (width: variables.$vp-player-812) {
+    @content;
+  }
+}
+
+@mixin player-375 {
+  @media (width: variables.$vp-player-375) {
+    @content;
+  }
+}

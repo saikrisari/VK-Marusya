@@ -1,0 +1,107 @@
+@use "../global" as global;
+
+.hero {
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 15px;
+
+    @include global.mobile-tablet {
+      gap: 12px;
+      margin: 0 0 32px;
+      padding-top: 24px;
+      padding-right: 0;
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    gap: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    align-items: center;
+
+    @include global.mobile-tablet {
+      font-size: 14px;
+      line-height: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  &__rating {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 700;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    @include global.mobile-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &.green {
+      background-color: global.$color-green-rating;
+    }
+    &.gold {
+      background-color: global.$color-gold-rating;
+    }
+    &.gray {
+      background-color: global.$color-gray-rating;
+    }
+    &.red {
+      background-color: global.$color-red-rating;
+    }
+  }
+
+  &__genre {
+    opacity: 70%;
+  }
+
+  &__runtime {
+    opacity: 70%;
+  }
+
+  &__year {
+    opacity: 70%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include global.mobile-tablet {
+      gap: 12px;
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 56px;
+
+      @include global.mobile-tablet {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    &-description {
+      font-size: 24px;
+      line-height: 32px;
+      opacity: 70%;
+      margin: 0 0 44px;
+
+      @include global.mobile-tablet {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@use "../global" as global;
+
+.account {
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    padding: 32px 0 0;
+    margin: 0 0 64px;
+
+    @include global.mobile-tablet {
+      margin: 0 0 40px;
+      padding: 16px 0 0;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 64px;
+    margin: 0 0 64px;
+    padding: 0;
+    list-style-type: none;
+
+    @include global.mobile-tablet {
+      margin: 0 0 20px;
+      gap: 24px;
+    }
+
+    &-item {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 8px 0;
+      cursor: pointer;
+
+      @include global.mobile-tablet {
+        gap: 8px;
+      }
+
+      &--active {
+        border-bottom: 1.5px solid global.$color-pink;
+        margin-bottom: -1.5px;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+
+      @include global.mobile-tablet {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @include global.mobile-tablet {
+          display: block;
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px 40px;
+    margin-bottom: 100px;
+    justify-content: center;
+
+    @include global.mobile-tablet {
+      justify-content: start;
+      gap: 40px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      position: static;
+      overflow-y: hidden;
+      overflow-x: auto;
+      flex: 0 0 auto;
+      max-width: 1180px;
+      width: calc(100vw - 40px);
+      padding: 20px 0;
+      margin-bottom: 80px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &-item {
+      border-radius: 16px;
+      width: 224px;
+      height: 336px;
+      position: relative;
+      box-shadow: 0px 0px 80px 0px global.$shadow-white;
+      border: 1px solid global.$border-gray;
+      background-color: global.$color-dark-gray;
+
+      @include global.mobile-tablet {
+        min-width: 224px;
+        width: 224px;
+        box-shadow: 0px 0px 20px 0px global.$shadow-white;
+      }
+    }
+
+    &-poster {
+      border-radius: 16px;
+      width: 224px;
+      height: 336px;
+    }
+
+    &-button {
+      display: flex;
+      padding: 8px;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      border: none;
+      border-radius: 30px;
+      background-color: global.$color-white;
+      cursor: pointer;
+
+      @include global.mobile-tablet {
+        display: none;
+      }
+    }
+
+    &-placeholder {
+      height: 100%;
+      min-width: 222px;
+      width: 222px;
+      border-radius: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    &-icon {
+      color: global.$color-black-black;
+    }
+  }
+
+  &__settings {
+    display: none;
+
+    &--active {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 64px;
+
+      @include global.mobile-tablet {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__personal {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+
+    @include global.mobile-tablet {
+      font-size: 14px;
+      line-height: 20px;
+      opacity: 50%;
+    }
+  }
+
+  &__data {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+
+    @include global.mobile-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: global.$border-chopped;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    color: global.$color-white;
+
+    @include global.mobile-tablet {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__svg {
+    color: global.$color-white;
+  }
+
+  &__initials {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: global.$color-white;
+  }
+}
